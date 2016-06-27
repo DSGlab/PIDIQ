@@ -1,7 +1,7 @@
 
 // March 15, 2016
 //
-// Fully automatic macro that assesses yellowing in arabidopsis
+// Fully automatic macro that assesses yellowing in plant tissue
 // Input
 //	- Folder of plant tray images 
 //	- background is soil
@@ -30,8 +30,6 @@ var DateTime = 0;				//Date and Time from Exif info
 
 //for folderChoice() function
 var savedir = 0;		// Directory where files will be saved
-var falsecolordir = ""; // Directory to store main image with fruit highlighted
-var midlinedir = "";	// Directory to store midline/skeleton images of isoloated fruit
 
 var filecount = 0;		// how many files are there?
 var jpgcount = 0;		// how many jpgs in the folder?
@@ -135,7 +133,7 @@ do {
 			}
 
 			
-			run("Analyze Particles...", "size=50-10000000000 pixel include in_situ show=Masks"); //restricts particle size for the green area to exclude tiny specks of algae and anything significantly bigger than the area you'd expect from a typical Arabidopsis rosette
+			run("Analyze Particles...", "size=50-10000000000 pixel include in_situ show=Masks"); //edit to restrict particle size for the green area selection
 			
 			run("Create Selection");
 			roiManager("add");
@@ -196,7 +194,7 @@ do {
 			}
 
 			
-			run("Analyze Particles...", "size=50-10000000000 pixel include in_situ show=Masks"); // restricts particle size for the yellow area to exclude most of the stained vermiculite and biocontrol
+			run("Analyze Particles...", "size=50-10000000000 pixel include in_situ show=Masks"); //edit to restrict particle size for the yellow area selection
 			
 			run("Create Selection");
 
